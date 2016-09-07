@@ -40,7 +40,7 @@ def get_md5(file_path):
     return hasher.hexdigest()
 
 
-class FileSource(file):
+class FileSource():
 
     """FileSource is a file object with metadata.
 
@@ -58,8 +58,14 @@ class FileSource(file):
         self.original_filename = original_filename
         self._id               = _id
         self.md5               = md5
+        fd                     = os.open(fp, os.O_RDONLY)
+        self._file             = os.fdopen(fd, 'rb')
 
-        super(FileSource, self).__init__(fp)
+    def __getattr__(self, attr):
+        return getattr(self._file, attr)
+
+    def __iter__(self):
+        return self._file.__iter__()
 
 
 class FileSystemStorage(MediaStorage):

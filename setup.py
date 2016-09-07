@@ -14,15 +14,15 @@ install_requires = ['Eve']
 
 setup(
     name='Eve-FSMediaStorage',
-    vesion='0.1-dev',
+    version='0.1.dev0',
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     author='Juan M Barrios',
     author_email='j.m.barrios@gmail.com',
     url='https://github.com/jmbarrios/eve-fsmediastorage',
     license=LICENSE,
-    plataforms=['any'],
+    platforms=['any'],
     packages=['eve_fsstorage'],
-    test_suite="eve_fsstorage.tests",
-    install_requires=install_requires
+    install_requires=install_requires,
+    test_suite="eve_fsstorage.tests"
 )
