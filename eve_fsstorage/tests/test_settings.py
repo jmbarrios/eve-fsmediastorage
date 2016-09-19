@@ -22,10 +22,10 @@ files = {
         },
         'media': {
             'type': 'media'
-            }
         }
     }
+}
 
 DOMAIN = {
     'files': files
-    }
+}

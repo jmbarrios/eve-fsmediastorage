@@ -3,14 +3,11 @@ import eve
 import os
 import simplejson as json
 from flask_pymongo import MongoClient
-from eve_fsstorage.media import FileSystemStorage
 from eve_fsstorage.tests.test_settings import (MONGO_PASSWORD,
                                                MONGO_USERNAME,
                                                MONGO_DBNAME,
-                                               DOMAIN,
                                                MONGO_HOST,
                                                MONGO_PORT)
-
 
 
 class ValueStack(object):
@@ -126,4 +123,3 @@ class TestMinimal(unittest.TestCase):
         self.connection = MongoClient(MONGO_HOST, MONGO_PORT)
         self.connection.drop_database(MONGO_DBNAME)
         self.connection.close()
-

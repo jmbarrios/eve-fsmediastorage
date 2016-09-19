@@ -1,13 +1,10 @@
 from tempfile import mkdtemp
 from shutil import rmtree
 from io import BytesIO
-from unittest import TestCase
 from eve_fsstorage.media import FileSystemStorage
-from eve_fsstorage.tests import TestMinimal, MONGO_DBNAME
-from eve import STATUS_OK, STATUS, STATUS_ERR, ISSUES, ETAG
+from eve_fsstorage.tests import TestMinimal
+from eve import STATUS_OK, STATUS, STATUS_ERR, ISSUES
 import base64
-from bson import ObjectId
-from eve.io.mongo import GridFSMediaStorage
 
 
 class TestFileSystemStorage(TestMinimal):
@@ -123,7 +120,7 @@ class TestFileSystemStorage(TestMinimal):
         self.assertEqual(returned['content_type'], 'text/plain')
         self.assertEqual(returned['length'], 16)
 
-    def test_filesystem_media_storage_post_extended_excluded_file_in_result(self):
+    def test_fs_media_storage_post_extended_excluded_file_in_result(self):
         r, s = self._post()
         self.assertEqual(STATUS_OK, r[STATUS])
 
@@ -175,4 +172,3 @@ class TestFileSystemStorage(TestMinimal):
                 self.test_value}
         return self.parse_response(self.test_client.post(
             self.url, data=data, headers=self.headers))
-

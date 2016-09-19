@@ -51,15 +51,15 @@ class FileSource():
     def __init__(self, fp, content_type, upload_date, filename, length,
                  original_filename, _id, md5, *args, **kwargs):
         """Constructor."""
-        self.content_type      = content_type
-        self.upload_date       = upload_date
-        self.filename          = filename
-        self.length            = length
+        self.content_type = content_type
+        self.upload_date = upload_date
+        self.filename = filename
+        self.length = length
         self.original_filename = original_filename
-        self._id               = _id
-        self.md5               = md5
-        fd                     = os.open(fp, os.O_RDONLY)
-        self._file             = os.fdopen(fd, 'rb')
+        self._id = _id
+        self.md5 = md5
+        fd = os.open(fp, os.O_RDONLY)
+        self._file = os.fdopen(fd, 'rb')
 
     def __getattr__(self, attr):
         return getattr(self._file, attr)
@@ -178,9 +178,7 @@ class FileSystemStorage(MediaStorage):
         saved_file = '{oid}_{filename}'.format(oid=item_id,
                                                filename=filename)
         fs_collection.update_one({'_id': item_id},
-                                 {'$set': {
-                                     'filename': saved_file
-                                     }
+                                 {'$set': {'filename': saved_file}
                                   }
                                  )
 
