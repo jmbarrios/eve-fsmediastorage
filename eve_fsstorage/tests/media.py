@@ -1,7 +1,7 @@
 from tempfile import mkdtemp
 from shutil import rmtree
 from io import BytesIO
-from eve_fsstorage.media import FileSystemStorage
+from eve_fsstorage import FileSystemStorage
 from eve_fsstorage.tests import TestMinimal
 from eve import STATUS_OK, STATUS, STATUS_ERR, ISSUES
 import base64
