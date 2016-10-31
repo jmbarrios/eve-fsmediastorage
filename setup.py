@@ -22,7 +22,7 @@ setup(
     url='https://github.com/jmbarrios/eve-fsmediastorage',
     license=LICENSE,
     platforms=['any'],
-    packages=['eve_fsstorage'],
+    packages=['eve_fsmediastorage'],
     install_requires=install_requires,
-    test_suite="eve_fsstorage.tests"
+    test_suite="eve_fsmediastorage.tests"
 )

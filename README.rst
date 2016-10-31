@@ -11,9 +11,9 @@ Using Eve FileSystemStorage class
 .. code-block:: python
 
     from eve import Eve
-    from eve_fsstorage import FileSystemStorage
+    from eve_fsmediastorage import FileSystemMediaStorage
 
-    app = Eve(media=FileSystemStorage)
+    app = Eve(media=FileSystemMediaStorage)
     app.run()
 
 The variable ``MEDIA_PATH`` must be declared on the ``settings.py`` file, and 
