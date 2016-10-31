@@ -6,7 +6,7 @@ server filesystem.
 
 The class was inspired on the implemented `GridFS MediaStorage`_.
 
-Using Eve FileSystemStorage class
+Using Eve FileSystemMediaStorage class
 ---------------------------------
 .. code-block:: python
 
