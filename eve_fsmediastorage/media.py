@@ -184,6 +184,7 @@ class FileSystemMediaStorage(MediaStorage):
 
         full_path = os.path.join(self._fs_path, saved_file)
         copy(fp, full_path)
+        os.close(fd)
         os.remove(fp)
 
         return item_id
